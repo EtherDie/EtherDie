@@ -32,9 +32,9 @@ contract EtherDie is usingProvable {
 
     function isWinner(uint _randomNum, address payable _userAddress, uint _userAmount) private {
         addressToTx[_userAddress].time = now;
-        if (_randomNum < 70) {
+        if (_randomNum < 65) {
             addressToTx[_userAddress].hasWon = true;
-            uint prize = _userAmount * 125/100;
+            uint prize = _userAmount * 130/100;
             _userAddress.transfer(prize);
         } else {
             addressToTx[_userAddress].hasWon = false;
@@ -54,3 +54,4 @@ contract EtherDie is usingProvable {
     }
 
 }
+
