@@ -1,6 +1,5 @@
 pragma solidity ^0.5.11;
 
-// https://docs.provable.xyz/#ethereum-quick-start
 import "https://raw.githubusercontent.com/provable-things/ethereum-api/master/provableAPI_0.5.sol";
 
 contract EtherDie is usingProvable {
