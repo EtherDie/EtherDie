@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html style="background-color: #2c3134;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>EtherDie</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/android-chrome-512x512.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+<link rel='shortcut icon' href='assets/img/apple-touch-icon-180x180.png' type='image/x-icon' />
+</head>
+
+<body class="text-monospace text-white-50" style="background-color: rgb(44,49,52);">
+    <nav class="navbar navbar-light navbar-expand-md" style="background-color: #31373a;">
+        <div class="container-fluid"><a class="navbar-brand text-white-50" href="#">🎲 EtherDie</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active text-white-50" href="index.html">HOME</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link text-white-50" href="play.html">PLAY</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center full-height">
+            <div class="jumbotron jumbotron-fluid" style="text-align: center;background-color: rgb(44,49,52);">
+                <h1>Roll the Dice</h1>
+                <h1>Win Some ETH</h1>
+                <p>a fully decentralized gambling site</p>
+                <p><a class="btn btn-primary btn-lg" role="button" data-bs-hover-animate="tada" href="play.html">PLAY</a></p>
+            </div>
+        </div>
+        <div class="text-center page-div">
+            <h3>How it works</h3><img class="img-fluid shadow-lg" src="assets/img/howItWorks.png" style="padding: 0;padding-right: 0;padding-left: 0;padding-top: 25px;padding-bottom: 25px;">
+            <p>[0] Send ETH to the smart contract</p>
+            <p>[1] Contract decides if you win/lose</p>
+            <p>[2] Winners get more ETH</p>
+            <p>[3] Losers get 0 ETH</p>
+        </div>
+        <div class="text-center page-div">
+            <h3>Rules</h3>
+            <h1 style="padding-top: 25px;padding-bottom: 25px;">60% Win Rate</h1>
+            <p>Maximum amount per play: 10% of the contract balance</p>
+            <p>Unlimited Plays</p>
+        </div>
+        <div class="text-center page-div">
+            <h3>What's the catch?</h3>
+            <h1 style="padding-top: 25px;padding-bottom: 25px;">Mini Rewards</h1>
+            <p>Win rate is high so rewards are kept to a minimum</p>
+            <p>Play small but play often</p>
+            <p></p>
+            <p>Still not sure? Try it on rinkeby testnet</p>
+        </div>
+        <div class="text-center page-div">
+            <h3>Philosophy</h3>
+            <h1 style="padding-top: 25px;padding-bottom: 25px;">100% Dapp</h1>
+            <p>The goal is to build a fully decentralized application<br></p>
+            <p></p>
+            <p>All computation is done on the Ethereum blockchain</p>
+            <p>Website is hosted on IPFS, a distributed file system</p>
+            <p>The result is an immutable app that cannot be shut down</p>
+        </div>
+        <div class="text-center page-div" style="padding-left: 4px;">
+            <h3>Technologies</h3><a href="https://trustwallet.com/" target="_blank"><img src="assets/img/trust.png" style="width: 95px;padding-right: 0px;"></a><a href="https://www.ethereum.org/" target="_blank"><img class="img-fluid" src="assets/img/eth.png" alt="Ethereum" style="width: 90px;"></a>
+            <a
+                href="https://provable.xyz/" target="_blank"><img class="rounded-circle" src="assets/img/provable.jpg" style="width: 90px;"></a><a href="https://metamask.io/" target="_blank"><img src="assets/img/metamask.png" style="width: 90px;padding-right: 5px;padding-left: 5px;"><img class="img-fluid" src="assets/img/coinbase.jpg" alt="Coinbase Wallet" style="width: 90px;"></a>
+                <a
+                    href="https://ipfs.io/" target="_blank"></a><img class="img-fluid" src="assets/img/ipfs.png" style="padding-top: 25px;padding-bottom: 25px;width: 95px;" alt="IPFS"><a href="https://wallet.coinbase.com/" target="_blank"></a>
+                    <p></p>
+        </div>
+        <div class="text-center page-div">
+            <h6>msg.sender.transfer(1 wei)</h6><a class="btn btn-primary btn-lg" role="button" data-bs-hover-animate="tada" href="play.html">PLAY</a></div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/web3.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/load.js"></script>
+    <script src="assets/js/maxSend.js"></script>
+    <script src="assets/js/contractListen.js"></script>
+    <script src="assets/js/send.js"></script>
+</body>
+
+</html>
