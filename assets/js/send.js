@@ -25,7 +25,7 @@ $("#send-button").on("click", async function() {
       ).innerHTML = `Transaction: <a href="${etherscanLink}" target="_blank"> link </a>`;
       // display winnings pending
       document.getElementById("winnings-text").innerHTML =
-        "Winnings: processing...";
+        "Processing 1-2 min...";
     })
     .catch(err => {
       alert(err.message);
