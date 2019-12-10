@@ -16,7 +16,7 @@ async function contractListen(sendTime) {
       .then(event => {
         const { time, hasWon, amount } = event;
         if (time > sendTime && hasWon) {
-          const winnings = (web3.utils.fromWei(amount) * 125) / 100;
+          const winnings = (web3.utils.fromWei(amount) * 130 / 100).toFixed(3);
           const text = `Winnings: ${winnings} ETH`
           document.getElementById("winnings-text").innerHTML = text;
           loop = false;
