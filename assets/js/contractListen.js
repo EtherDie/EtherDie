@@ -1,38 +1,33 @@
-// hackery b/c mobile does not support event listeners
-async function contractListen(sendTime) {
+// listen to contract event
+async function contractListen() {
   const network = await web3.eth.net.getNetworkType();
   const fromAddress = (await web3.eth.getAccounts())[0];
   const contractAddress = config[network];
   const abi = config.abi;
   const contractInstance = new web3.eth.Contract(abi, contractAddress);
 
-  let loop = true;
-  while (loop) {
-    await pause(3000);
-    //https://web3js.readthedocs.io/en/v1.2.4/web3-eth-contract.html#methods-mymethod-call
-    contractInstance.methods
-      .addressToTx(fromAddress)
-      .call()
-      .then(event => {
-        const { time, hasWon, amount } = event;
-        if (time > sendTime && hasWon) {
-          const winnings = (web3.utils.fromWei(amount) * 130 / 100).toFixed(3);
-          const text = `Winnings: ${winnings} ETH`
-          document.getElementById("winnings-text").innerHTML = text;
-          loop = false;
-        }
-        if (time > sendTime && !hasWon) {
-          document.getElementById("winnings-text").innerHTML = `Winnings: 0 ETH`;
-          loop = false;
-        }
-      });
-  }
-}
+  contractInstance.events
+    .Callback()
+    .on("data", event => {
+      const randomNumber = event.returnValues["1"];
+      const eventAddress = event.returnValues["2"];
+      const wei = event.returnValues["3"];
+      const eth = web3.utils.fromWei(wei, "ether");
 
-function pause(ms) {
-  return new Promise(res => {
-    setInterval(() => {
-      return res();
-    }, ms);
-  });
+      // win
+      if (fromAddress === eventAddress && randomNumber < 60) {
+        const winnings = (eth * 125) / 100;
+        const text = `You Won: ${winnings.toFixed(4)} ETH`;
+        document.getElementById("winnings-text").innerHTML = text;
+      }
+
+      // lose
+      if (fromAddress === eventAddress && randomNumber >= 60) {
+        const text = `You Won: 0 ETH`;
+        document.getElementById("winnings-text").innerHTML = text;
+      }
+    })
+    .on("error", err => {
+      alert(err);
+    });
 }

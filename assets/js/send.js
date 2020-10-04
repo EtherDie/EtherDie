@@ -13,8 +13,6 @@ $("#send-button").on("click", async function() {
       value: web3.utils.toWei(ethAmount, "ether")
     })
     .on("transactionHash", txHash => {
-      // listen to contract for win/lose
-      contractListen(Math.round(new Date() / 1000));
       // display transaction hash
       const etherscanLink =
         network === "main"
@@ -25,7 +23,7 @@ $("#send-button").on("click", async function() {
       ).innerHTML = `Transaction: <a href="${etherscanLink}" target="_blank"> link </a>`;
       // display winnings pending
       document.getElementById("winnings-text").innerHTML =
-        "Processing 1-2 min...";
+        "Winnings: processing...";
     })
     .catch(err => {
       alert(err.message);
